@@ -10,4 +10,4 @@
 
 Run `python uniBremenEmployees.py`
 
-Output file: `uni_bremen_employees.csv`
+Output file: `uni_bremen_employees_full.csv`
