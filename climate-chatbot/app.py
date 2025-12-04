@@ -12,16 +12,16 @@ API_KEY = st.secrets["GEMINI_API_KEY"] # using Streamlit secret in ~/.streamlit/
 genai.configure(api_key=API_KEY)
 
 # Configure Streamlit page
-st.set_page_config(page_title="Climate Helper Chatbot", layout="centered")
-st.title("🌱 Climate Helper Chatbot")
-st.subheader("Your AI assistant for climate, solar, and sustainability questions")
+st.set_page_config(page_title="Matchmaking Chatbot", layout="centered")
+st.title("🌱 Matchmaking Chatbot")
+st.subheader("Your AI assistant for University Bremen Professor and Research matchmaking")
 
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
             "role": "assistant", 
-            "content": "Hi! I'm your climate helper. Ask me anything about solar energy, sustainability, or climate science. How can I help you today?"
+            "content": "Hi! I'm your matchmaking helper to help you find research project at University of Bremen. Ask me anything about Professor and Research Group at University of Bremen. How can I help you today?"
         }
     ]
 
@@ -37,14 +37,14 @@ def friendly_wrap(raw_text):
     return (
         "Great question! 🌱\n\n"
         f"{raw_text.strip()}\n\n"
-        "Would you like me to elaborate on any part of this, or do you have other climate questions?"
+        "Would you like me to elaborate on any part of this, or do you have other questions?"
     )
 
 # Display existing messages
 display_messages()
 
 # Handle new user input
-prompt = st.chat_input("Ask me about climate, solar installations, sustainability...")
+prompt = st.chat_input("Ask me about research project, professor in University of Bremen...")
 
 if prompt:
     # Add user message to history
@@ -63,7 +63,7 @@ if prompt:
         try:
             model = genai.GenerativeModel('gemini-flash-latest')
             response = model.generate_content(
-                f"You are a helpful climate and sustainability expert. Please provide accurate, encouraging information about: {prompt}"
+                f"You are a helpful University of Bremen professor and researcher expert. Please provide accurate, encouraging information about: {prompt}"
             )
 
             # Extract response text
