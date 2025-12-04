@@ -7,7 +7,8 @@ import streamlit as st
 import google.generativeai as genai
 
 # Configure the Gemini API
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = st.secrets["GEMINI_API_KEY"] # using Streamlit secret in ~/.streamlit/secrets.toml file
+# API_KEY = os.getenv("GEMINI_API_KEY") # using python secret in ~/.env file
 genai.configure(api_key=API_KEY)
 
 # Configure Streamlit page
