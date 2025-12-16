@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../uni-bremen"
+		},
+		{
+			"path": "../weekly-reports"
 		}
 	],
 	"settings": {}
